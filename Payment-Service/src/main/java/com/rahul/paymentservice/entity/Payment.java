@@ -1,4 +1,6 @@
-package com.rahul.orderservice.entity;
+package com.rahul.paymentservice.entity;
+
+import org.hibernate.annotations.ValueGenerationType;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,20 +14,18 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="ORDER")
+@Table(name="PAYMENT")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Getter
 @Setter
-
-public class Order {
+public class Payment {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	private String name;
-	private int qty;
-	private double price;
-	
-	
+	private Integer paymentId;
+	private String paymentStatus;
+	private String transactionId;
+
 }
